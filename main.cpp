@@ -17,15 +17,16 @@ int main(int argc, char** argv) {
     }
 
     // add 32bit number
-    uint32_t num1, num2;
+    uint32_t num1, num2, sum;
     fread(&num1, sizeof(uint32_t), 1, f1);
     fread(&num2, sizeof(uint32_t), 1, f2);
 
     num1 = ntohl(num1);
     num2 = ntohl(num2);
+    sum = num1 + num2;
 
     printf("%u(0x%x) + %u(0x%x) = %u(0x%x)\n", 
-            num1, num1, num2, num2, num1 + num2, num1 + num2);
+            num1, num1, num2, num2, sum, sum);
 
     fclose(f1);
     fclose(f2);
